@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Bear Crypto</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Bear Crypto</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 29 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to Modular Arithmetic</title>
+      <link>http://localhost:1313/posts/introduction-to-modular-arithmetic/</link>
+      <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/introduction-to-modular-arithmetic/</guid>
+      <description>&lt;h2 id=&#34;the-clock-analogy&#34;&gt;The Clock Analogy&lt;/h2&gt;
+&lt;p&gt;When someone asks &amp;ldquo;What time is it 15 hours after 10 o&amp;rsquo;clock?&amp;rdquo;, you don&amp;rsquo;t answer &amp;ldquo;25 o&amp;rsquo;clock&amp;rdquo; - you say &amp;ldquo;1 o&amp;rsquo;clock.&amp;rdquo; You&amp;rsquo;ve just done modular arithmetic! The clock &amp;ldquo;wraps around&amp;rdquo; after 12, and this wrapping behavior is fundamental to modern cryptography.&lt;/p&gt;
+&lt;h2 id=&#34;formal-definition&#34;&gt;Formal Definition&lt;/h2&gt;
+&lt;p&gt;In mathematics, we write $a \equiv b \pmod{n}$ and say &amp;ldquo;$a$ is congruent to $b$ modulo $n$&amp;rdquo; when&amp;hellip;&lt;/p&gt;
+&lt;p&gt;[Continue your content here]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>About Bear Crypto</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;h2 id=&#34;about-this-blog&#34;&gt;About This Blog&lt;/h2&gt;
+&lt;p&gt;Welcome to Bear Crypto! This blog documents my exploration of cryptography and its mathematical foundations as a cybersecurity student specializing in cryptographic systems.&lt;/p&gt;
+&lt;p&gt;The name &amp;ldquo;Bear Crypto&amp;rdquo; comes from my name, Bjørn, which means &amp;ldquo;bear&amp;rdquo; in Norwegian - and also represents my goal of &lt;em&gt;bearing&lt;/em&gt; knowledge about cryptography through clear explanations and rigorous examples.&lt;/p&gt;
+&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;
+&lt;p&gt;I&amp;rsquo;m Bjørn, a computer science student in Norway specializing in cybersecurity with a focus on cryptography. I&amp;rsquo;m particularly drawn to the mathematical aspects of cryptographic systems and post-quantum cryptography.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,63 @@
+baseURL = 'https://github.com/bjorneik/bear-crypto.git'
+languageCode = 'en-us'
+title = 'Bear Crypto'
+theme = 'PaperMod'
+
+[params]
+  description = "Exploring cryptography and its mathematical foundations"
+  author = "Bjørn"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  
+  [params.homeInfoParams]
+    Title = "Bear Crypto"
+    Content = "Welcome! This blog explores cryptography and its mathematical foundations, from modular arithmetic to post-quantum cryptosystems."
+
+# Enable math rendering
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)'], ['$', '$']]
+
+# Taxonomies
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+# Main menu
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "Mathematics Foundations"
+  url = "/categories/mathematics-foundations/"
+  weight = 2
+
+[[menu.main]]
+  name = "Classical Cryptography"
+  url = "/categories/classical-cryptography/"
+  weight = 3
+
+[[menu.main]]
+  name = "Symmetric Key"
+  url = "/categories/symmetric-key-systems/"
+  weight = 4
+
+[[menu.main]]
+  name = "Public Key"
+  url = "/categories/public-key-cryptography/"
+  weight = 5
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 6
