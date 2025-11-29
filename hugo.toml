@@ -12,9 +12,16 @@ theme = 'PaperMod'
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
   
-  [params.homeInfoParams]
-    Title = "Bearing Cryptography"
-    Content = "Welcome! This blog explores cryptography and its mathematical foundations, from modular arithmetic to post-quantum cryptosystems."
+
+
+#  [params.homeInfoParams]
+#  Title = "Bearing Cryptography"
+#  Content = "Welcome! This blog explores cryptography and its mathematical foundations, from modular arithmetic to post-quantum cryptosystems."
+#  imageUrl = "/images/banner.png"
+#  imageWidth = 600
+#  imageHeight = 400
+#  imageTitle = "Bearing Cryptography"
+
 
 # Enable math rendering
 [markup]
