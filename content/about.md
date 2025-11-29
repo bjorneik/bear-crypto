@@ -1,5 +1,5 @@
 ---
-title: "About Bear Crypto"
+title: "About Bearing Cryptography"
 url: "/about/"
 ShowReadingTime: false
 ShowBreadCrumbs: false
@@ -7,9 +7,9 @@ ShowBreadCrumbs: false
 
 ## About This Blog
 
-Welcome to Bear Crypto! This blog documents my exploration of cryptography and its mathematical foundations as a cybersecurity student specializing in cryptographic systems.
+Welcome to Bearing Cryptography! This blog documents my exploration of cryptography and its mathematical foundations as a cybersecurity student specializing in cryptographic systems.
 
-The name "Bear Crypto" comes from my name, Bjørn, which means "bear" in Norwegian - and also represents my goal of *bearing* knowledge about cryptography through clear explanations and rigorous examples.
+The name "Bearing Cryptography" reflects my goal of *bearing* knowledge about cryptography through clear explanations and rigorous examples. (It also connects to my name, Bjørn, which means "bear" in Norwegian!)
 
 ## About Me
 
@@ -26,4 +26,4 @@ Each post aims to make complex cryptographic concepts accessible while maintaini
 
 ## Contact
 
-Feel free to reach out with questions or corrections through [your preferred contact method].
+Feel free to reach out with questions or corrections.

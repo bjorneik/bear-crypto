@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Bear Crypto</title>
+    <title>Bearing Cryptography</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content on Bear Crypto</description>
+    <description>Recent content on Bearing Cryptography</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 29 Nov 2024 00:00:00 +0000</lastBuildDate>
@@ -20,13 +20,13 @@
 &lt;p&gt;[Continue your content here]&lt;/p&gt;</description>
     </item>
     <item>
-      <title>About Bear Crypto</title>
+      <title>About Bearing Cryptography</title>
       <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/about/</guid>
       <description>&lt;h2 id=&#34;about-this-blog&#34;&gt;About This Blog&lt;/h2&gt;
-&lt;p&gt;Welcome to Bear Crypto! This blog documents my exploration of cryptography and its mathematical foundations as a cybersecurity student specializing in cryptographic systems.&lt;/p&gt;
-&lt;p&gt;The name &amp;ldquo;Bear Crypto&amp;rdquo; comes from my name, Bjørn, which means &amp;ldquo;bear&amp;rdquo; in Norwegian - and also represents my goal of &lt;em&gt;bearing&lt;/em&gt; knowledge about cryptography through clear explanations and rigorous examples.&lt;/p&gt;
+&lt;p&gt;Welcome to Bearing Cryptography! This blog documents my exploration of cryptography and its mathematical foundations as a cybersecurity student specializing in cryptographic systems.&lt;/p&gt;
+&lt;p&gt;The name &amp;ldquo;Bearing Cryptography&amp;rdquo; reflects my goal of &lt;em&gt;bearing&lt;/em&gt; knowledge about cryptography through clear explanations and rigorous examples. (It also connects to my name, Bjørn, which means &amp;ldquo;bear&amp;rdquo; in Norwegian!)&lt;/p&gt;
 &lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;
 &lt;p&gt;I&amp;rsquo;m Bjørn, a computer science student in Norway specializing in cybersecurity with a focus on cryptography. I&amp;rsquo;m particularly drawn to the mathematical aspects of cryptographic systems and post-quantum cryptography.&lt;/p&gt;</description>
     </item>

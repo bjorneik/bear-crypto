@@ -1,6 +1,6 @@
-baseURL = 'https://github.com/bjorneik/bear-crypto.git'
+baseURL = 'https://bear-crypto.org/'
 languageCode = 'en-us'
-title = 'Bear Crypto'
+title = 'Bearing Cryptography'
 theme = 'PaperMod'
 
 [params]
@@ -13,7 +13,7 @@ theme = 'PaperMod'
   ShowCodeCopyButtons = true
   
   [params.homeInfoParams]
-    Title = "Bear Crypto"
+    Title = "Bearing Cryptography"
     Content = "Welcome! This blog explores cryptography and its mathematical foundations, from modular arithmetic to post-quantum cryptosystems."
 
 # Enable math rendering
