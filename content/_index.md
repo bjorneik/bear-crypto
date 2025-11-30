@@ -1,7 +1,7 @@
-
-
-![Bearing Cryptography](/images/banner.png)
-
-# Welcome to Bearing Cryptography
-
-This blog explores cryptography and its mathematical foundations, from modular arithmetic to post-quantum cryptosystems.
+---
+title: "Home"
+imageUrl: "/images/banner.png"
+imageWidth: 600
+imageHeight: 400
+imageTitle: "Bearing Cryptography"
+---
