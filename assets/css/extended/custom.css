@@ -1,0 +1,9 @@
+/* Justify text in blog posts */
+.post-content p {
+    text-align: justify;
+}
+
+/* Optional: Also justify text in lists */
+.post-content li {
+    text-align: justify;
+}
