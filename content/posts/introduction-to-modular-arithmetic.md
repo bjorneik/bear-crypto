@@ -153,7 +153,9 @@ With the definition of residue, we have also implicitly defined equivalence clas
 Before we formally define what an equivalence class is, let me show you a visual representation of modular arithmetic! We will continue working modulo $7$ (7 is my favorite number!). We already defined that the residues vary from $0$ to $6$. For any number higher than $6$ we just place them in the same category as one of the residues. For example $7$ is in the same category as $0$, $27$ in the same category as $6$ and so on. We can then build a wheel with $7$ different sectors, one for each residue, and allocate any number in one of those $7$ sectors! Here's a visual representation:
 
 <div style="text-align: center; margin: 2rem 0;">
-  <iframe src="/animations/mod7_wheel.html" width="820" height="820" frameborder="0" style="border: none; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"></iframe>
+  <iframe src="/animations/mod7_wheel.html" 
+          style="width: 100%; max-width: 820px; height: 600px; border: none; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  </iframe>
 </div>
 
 As we can see all integers that satisfy $ x \equiv 0 \pmod{7} $ are in the red sector, all that satisfy $x \equiv 1 \pmod{7} $ are in the teal sector, and so on. Notice how the wheel repeates every 7 numbers - this is the cyclic nature of modular arithmetic. All numbers in the the sectors can be interchanged with one another, that's the beauty in modular arithmetic! Take a look at the wheel. Can you quickly answer what is $x \equiv 29 \times 33 \pmod{7}$? The answer is $5$ and you don't need to know how much $29 \times 33$ is! We know $29 \equiv 1 \pmod{7}$ and $33 \equiv 5 \pmod{7}$, we can then easily replace $29$ by $1$ and $33$ by $5$. Therefore $x \equiv 1 \times 5 \equiv 5 \pmod{7}$.
