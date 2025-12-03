@@ -14,9 +14,11 @@ theme = 'PaperMod'
   
   # homeInfoParams removed since we're using custom homepage layout
 
-# Enable math rendering
+# Enable math rendering and unsafe HTML for iframes
 [markup]
   [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
     [markup.goldmark.extensions]
       [markup.goldmark.extensions.passthrough]
         enable = true
