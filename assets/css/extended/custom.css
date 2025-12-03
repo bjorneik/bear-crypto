@@ -1,9 +1,35 @@
-/* Justify text in blog posts */
+/* Justify text in blog posts with hyphenation */
 .post-content p {
     text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 /* Optional: Also justify text in lists */
 .post-content li {
     text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Don't justify headings */
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+    text-align: left;
+}
+
+/* Handle long math expressions */
+.post-content .MathJax {
+    overflow-x: auto;
+    overflow-y: hidden;
 }
