@@ -102,3 +102,36 @@
         height: 850px;
     }
 }
+
+/* Make homepage banner responsive to content width */
+.post img,
+article img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Specifically for homepage banner - make it fill the content width */
+.post-content img,
+.post img[src*="banner"] {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* On larger screens, let banner grow with content width */
+@media (min-width: 768px) {
+    .post-content > p > img:first-child,
+    article > .post-content > p:first-of-type > img {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+@media (min-width: 1400px) {
+    .post-content > p > img:first-child,
+    article > .post-content > p:first-of-type > img {
+        max-width: 1100px;
+    }
+}
