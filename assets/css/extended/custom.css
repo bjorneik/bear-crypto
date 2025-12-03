@@ -1,0 +1,99 @@
+/* Increase content width site-wide */
+.main {
+    max-width: 900px !important;
+}
+
+/* For very large screens, allow even wider */
+@media (min-width: 1400px) {
+    .main {
+        max-width: 1100px !important;
+    }
+}
+
+/* Adjust post content specifically */
+.post-content {
+    max-width: 100%;
+}
+
+/* Justify text in blog posts with hyphenation */
+.post-content p {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Also justify text in lists */
+.post-content li {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Don't justify headings */
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+    text-align: left;
+}
+
+/* Handle long math expressions */
+.post-content .MathJax {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* Make specific div containers break out to full width for wheel */
+.post-content > div[style*="text-align: center"] {
+    width: 100vw;
+    max-width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background: transparent;
+}
+
+/* Ensure iframe inside takes good width and removes scrolling */
+.post-content > div[style*="text-align: center"] iframe {
+    width: 95vw;
+    max-width: 1400px;
+    height: 95vw;
+    max-height: 1400px;
+    display: block;
+    margin: 0 auto;
+    border: none;
+    overflow: hidden;
+}
+
+/* On tablets and larger screens */
+@media (min-width: 768px) {
+    .post-content > div[style*="text-align: center"] iframe {
+        width: 85vw;
+        max-width: 1100px;
+        height: 85vw;
+        max-height: 1100px;
+    }
+}
+
+/* On desktop screens */
+@media (min-width: 1200px) {
+    .post-content > div[style*="text-align: center"] iframe {
+        width: 75vw;
+        max-width: 1200px;
+        height: 75vw;
+        max-height: 1200px;
+    }
+}
