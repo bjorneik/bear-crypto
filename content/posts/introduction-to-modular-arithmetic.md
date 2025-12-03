@@ -130,7 +130,7 @@ There is another way to perform "division" in modular arithmetic that will be pr
 
 As I mentioned before, I like to think of modular arithmetic as a cycle, and a cycle is nothing but a repetition of patterns. A bit of philosophy: does a cycle have a beginning or end? I like to think no, and that was very useful to me when I started to grasp how modular arithmetic works. We have seen so far some properties and, most importantly, the definition of congruency. 
 
-If we say that a certain number $x \equiv 2 \pmod{7}$ how many solutions do we have? The answer is: infinite solutions, because a cycle has no beginning nor end! Obviously $ x = 2 $ satisfies the congruency. But so does $ x = -5 $ or $x = 16 $ or even $ x = 1649706 $. If you scroll up a bit you will see the definition of congruency. To say that $x \equiv 2 \pmod{7}$ is the same to say that $ n \mid (x -2)$. This means that there exits an integer, $q$, such that when we multiply it by $7$ we get $ (x-2)$. Mathematically we write:
+If we say that a certain number $x \equiv 2 \pmod{7}$ how many solutions do we have? The answer is: infinite solutions, because a cycle has no beginning nor end! Obviously $ x = 2 $ satisfies the congruency. But so does $ x = -5 $ or $x = 16 $ or even $ x = 1649706 $. If you scroll up a bit you will see the definition of congruency. To say that $x \equiv 2 \pmod{7}$ is the same as saying that $7 \mid (x -2)$. This means that there exists an integer, $q$, such that when we multiply it by $7$ we get $(x-2)$. Mathematically we write:
 
 $ \exists  \text{ q } \in \mathbb{Z} : x -2 = 7 \times q $
 

@@ -15,9 +15,9 @@
     max-width: 100%;
 }
 
-/* Justify text in blog posts with hyphenation */
+/* Text alignment - justified on desktop, left on mobile */
 .post-content p {
-    text-align: justify;
+    text-align: left;
     hyphens: auto;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
@@ -25,14 +25,24 @@
     overflow-wrap: break-word;
 }
 
-/* Also justify text in lists */
 .post-content li {
-    text-align: justify;
+    text-align: left;
     hyphens: auto;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     word-wrap: break-word;
     overflow-wrap: break-word;
+}
+
+/* Justify text only on larger screens */
+@media (min-width: 768px) {
+    .post-content p {
+        text-align: justify;
+    }
+    
+    .post-content li {
+        text-align: justify;
+    }
 }
 
 /* Don't justify headings */
@@ -45,34 +55,50 @@
     text-align: left;
 }
 
-/* Handle long math expressions */
+/* Handle long math expressions - allow horizontal scroll */
 .post-content .MathJax {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    display: block;
+}
+
+/* Prevent math from breaking layout on mobile */
+.post-content .MathJax_Display {
     overflow-x: auto;
     overflow-y: hidden;
 }
 
-/* Simple large iframe styling */
+/* Simple iframe styling - responsive */
 .post-content iframe {
     display: block;
     margin: 2rem auto;
     border: none;
     width: 100%;
-    max-width: 700px;
-    height: 700px;
+    max-width: 90vw;
+    height: 90vw;
 }
 
-/* On tablets and larger screens, make it bigger */
-@media (min-width: 768px) {
+/* On tablets, make wheel bigger */
+@media (min-width: 600px) {
     .post-content iframe {
-        max-width: 800px;
-        height: 800px;
+        max-width: 600px;
+        height: 600px;
     }
 }
 
-/* On desktop screens, even bigger */
+/* On larger tablets */
+@media (min-width: 768px) {
+    .post-content iframe {
+        max-width: 700px;
+        height: 700px;
+    }
+}
+
+/* On desktop screens */
 @media (min-width: 1200px) {
     .post-content iframe {
-        max-width: 900px;
-        height: 900px;
+        max-width: 850px;
+        height: 850px;
     }
 }
