@@ -60,35 +60,40 @@
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    padding: 2rem 1rem;
+    padding: 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background: transparent;
 }
 
-/* Ensure iframe inside takes good width */
+/* Ensure iframe inside takes good width and removes scrolling */
 .post-content > div[style*="text-align: center"] iframe {
-    width: 90vw;
-    max-width: 1200px;
-    height: 90vw;
-    max-height: 1200px;
+    width: 95vw;
+    max-width: 1400px;
+    height: 95vw;
+    max-height: 1400px;
     display: block;
     margin: 0 auto;
+    border: none;
+    overflow: hidden;
 }
 
 /* On tablets and larger screens */
 @media (min-width: 768px) {
     .post-content > div[style*="text-align: center"] iframe {
-        width: 80vw;
-        max-width: 900px;
-        height: 80vw;
-        max-height: 900px;
+        width: 85vw;
+        max-width: 1100px;
+        height: 85vw;
+        max-height: 1100px;
     }
 }
 
 /* On desktop screens */
 @media (min-width: 1200px) {
     .post-content > div[style*="text-align: center"] iframe {
-        width: 60vw;
-        max-width: 1000px;
-        height: 60vw;
-        max-height: 1000px;
+        width: 75vw;
+        max-width: 1200px;
+        height: 75vw;
+        max-height: 1200px;
     }
 }
