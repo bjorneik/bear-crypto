@@ -15,33 +15,21 @@
     max-width: 100%;
 }
 
-/* Text alignment - justified on desktop, left on mobile */
-.post-content p {
-    text-align: left;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-
+/* Mobile: left-aligned, comfortable reading */
+.post-content p,
 .post-content li {
     text-align: left;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
+    line-height: 1.6;
     word-wrap: break-word;
-    overflow-wrap: break-word;
 }
 
-/* Justify text only on larger screens */
+/* Desktop: justified text */
 @media (min-width: 768px) {
-    .post-content p {
-        text-align: justify;
-    }
-    
+    .post-content p,
     .post-content li {
         text-align: justify;
+        hyphens: auto;
+        -webkit-hyphens: auto;
     }
 }
 
@@ -55,77 +43,41 @@
     text-align: left;
 }
 
-/* Fix inline math to stay inline */
-.post-content .MathJax {
-    display: inline !important;
-    overflow-x: visible;
-    overflow-y: visible;
-}
-
-/* Display math (block equations) should scroll if needed */
+/* Math: keep it simple, allow horizontal scroll for long equations */
 .post-content .MathJax_Display {
-    display: block !important;
     overflow-x: auto;
-    overflow-y: hidden;
-    margin: 1em 0;
+    padding: 0.5rem 0;
 }
 
-/* Ensure math doesn't break words */
-.post-content mjx-container {
-    display: inline-block !important;
-    overflow-x: visible;
-}
-
-.post-content mjx-container[display="true"] {
-    display: block !important;
-    overflow-x: auto;
-    margin: 1em 0;
-}
-
-/* Simple iframe styling - responsive */
+/* Wheel animation - responsive sizing */
 .post-content iframe {
     display: block;
     margin: 2rem auto;
     border: none;
     width: 100%;
-    max-width: 90vw;
     height: 90vw;
+    max-width: 700px;
+    max-height: 700px;
 }
 
-/* On tablets, make wheel bigger */
-@media (min-width: 600px) {
-    .post-content iframe {
-        max-width: 600px;
-        height: 600px;
-    }
-}
-
-/* On larger tablets */
+/* Tablet screens */
 @media (min-width: 768px) {
     .post-content iframe {
-        max-width: 700px;
-        height: 700px;
+        max-width: 800px;
+        max-height: 800px;
     }
 }
 
-/* On desktop screens */
+/* Desktop screens */
 @media (min-width: 1200px) {
     .post-content iframe {
-        max-width: 850px;
-        height: 850px;
+        max-width: 900px;
+        max-height: 900px;
     }
 }
 
-/* Make homepage banner responsive to content width */
-.post img,
-article img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Specifically for homepage banner */
+/* Homepage banner - responsive */
 .post-content img {
-    width: 100%;
     max-width: 100%;
     height: auto;
 }
