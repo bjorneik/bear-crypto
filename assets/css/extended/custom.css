@@ -1,3 +1,20 @@
+/* Increase content width site-wide */
+.main {
+    max-width: 900px !important;
+}
+
+/* For very large screens, allow even wider */
+@media (min-width: 1400px) {
+    .main {
+        max-width: 1100px !important;
+    }
+}
+
+/* Adjust post content specifically */
+.post-content {
+    max-width: 100%;
+}
+
 /* Justify text in blog posts with hyphenation */
 .post-content p {
     text-align: justify;
@@ -8,7 +25,7 @@
     overflow-wrap: break-word;
 }
 
-/* Optional: Also justify text in lists */
+/* Also justify text in lists */
 .post-content li {
     text-align: justify;
     hyphens: auto;
@@ -34,15 +51,44 @@
     overflow-y: hidden;
 }
 
-/* Make iframes responsive */
-.post-content iframe {
-    max-width: 100%;
-    height: auto;
-    min-height: 400px;
+/* Make specific div containers break out to full width for wheel */
+.post-content > div[style*="text-align: center"] {
+    width: 100vw;
+    max-width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 2rem 1rem;
 }
 
-/* Specific styling for centered iframes */
-.post-content div[style*="text-align: center"] iframe {
+/* Ensure iframe inside takes good width */
+.post-content > div[style*="text-align: center"] iframe {
+    width: 90vw;
+    max-width: 1200px;
+    height: 90vw;
+    max-height: 1200px;
     display: block;
     margin: 0 auto;
+}
+
+/* On tablets and larger screens */
+@media (min-width: 768px) {
+    .post-content > div[style*="text-align: center"] iframe {
+        width: 80vw;
+        max-width: 900px;
+        height: 80vw;
+        max-height: 900px;
+    }
+}
+
+/* On desktop screens */
+@media (min-width: 1200px) {
+    .post-content > div[style*="text-align: center"] iframe {
+        width: 60vw;
+        max-width: 1000px;
+        height: 60vw;
+        max-height: 1000px;
+    }
 }
