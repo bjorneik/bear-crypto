@@ -47,7 +47,9 @@ This is a short and easy computation that we can directly compute:
  
   But let's apply the property we just saw above: 
   
-  $ (8 + 9) \pmod{5} = (8 \pmod{5} + 9\pmod{5}) \pmod{5} = 3 + 4 \equiv 7 \equiv 2 \pmod{5} $
+  $ (8 + 9) \pmod{5} = (8 \pmod{5} + 9\pmod{5}) \pmod{5} = $
+  
+ $ = 3 + 4 \equiv 7 \equiv 2 \pmod{5} $
 
 Now notice what happens if we don't write the final modulos:
 
@@ -65,7 +67,9 @@ $(a - b) \pmod{n} = ((a \pmod{n} - b \pmod{n})) \pmod{n} $
 
 Example: 
 
-$ (67 - 14) \pmod{6} = (67 \pmod{6} - 14 \pmod{6}) \pmod{6} = 1 - 2 \equiv -1 \equiv 5 \pmod{6} $
+$ (67 - 14) \pmod{6} = (67 \pmod{6} - 14 \pmod{6}) \pmod{6} $
+
+$ = 1 - 2 \equiv -1 \equiv 5 \pmod{6} $
 
 It's common to express the result of a modulo $n$ operation with the smallest positive integer, which in all cases will be an integer between $0$ and $ n - 1$ (we will see why very shortly!).
 
@@ -83,7 +87,9 @@ $ (86544 \times 73261) \pmod{9} $
 
 The property can be even more useful in some cases. In the example above we know that $86544$ is divisible by $9$ (this can be easily checked by adding all the digits: $ 8 + 6 + 5 + 4 + 4 = 27 $ which is divisible by $9$.). This means that $ 86544 \equiv 0 \pmod{9} $. We don't even need to know $ 73261 \pmod{9} $ to know the result of $ (86544 \times 73261) \pmod{9} $.
 
-$ (86544 \times 73261) \pmod{9} = (86544 \pmod{9}) \times (73261 \pmod{9}) \pmod{9} \equiv 0 \times (73261 \pmod{9}) \equiv 0 \pmod{9} $
+$ (86544 \times 73261) \pmod{9} = (86544 \pmod{9}) \times (73261 \pmod{9}) \pmod{9} \equiv $
+
+$ \equiv 0 \times (73261 \pmod{9}) \equiv 0 \pmod{9} $
 
 ### Other Operations
 
@@ -132,7 +138,7 @@ As I mentioned before, I like to think of modular arithmetic as a cycle, and a c
 
 If we say that a certain number $x \equiv 2 \pmod{7}$ how many solutions do we have? The answer is: infinite solutions, because a cycle has no beginning nor end! Obviously $ x = 2 $ satisfies the congruency. But so does $ x = -5 $ or $x = 16 $ or even $ x = 1649706 $. If you scroll up a bit you will see the definition of congruency. To say that $x \equiv 2 \pmod{7}$ is the same to say that $ n \mid (x -2)$. This means that there exits an integer, $q$, such that when we multiply it by $7$ we get $ (x-2)$. Mathematically we write:
 
-$ \exists  q \in \mathbb{Z} : x -2 = 7 \times q $
+$ \exists  \text{ q } \in \mathbb{Z} : x -2 = 7 \times q $
 
 We can therefore write $x$ as
 
