@@ -154,7 +154,7 @@ Before we formally define what an equivalence class is, let me show you a visual
 
 <div style="text-align: center; margin: 2rem 0;">
   <iframe src="/animations/mod7_wheel.html" 
-          style="width: 100%; max-width: 820px; height: 600px; border: none; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          style="width: 100%; max-width: 1000px; height: 1000px; border: none; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
   </iframe>
 </div>
 
