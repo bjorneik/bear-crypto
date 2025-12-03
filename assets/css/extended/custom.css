@@ -33,3 +33,16 @@
     overflow-x: auto;
     overflow-y: hidden;
 }
+
+/* Make iframes responsive */
+.post-content iframe {
+    max-width: 100%;
+    height: auto;
+    min-height: 400px;
+}
+
+/* Specific styling for centered iframes */
+.post-content div[style*="text-align: center"] iframe {
+    display: block;
+    margin: 0 auto;
+}
