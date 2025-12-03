@@ -39,7 +39,7 @@ It's very important that we don't forget the final modulos!
 
 $(a + b) \pmod{n} \neq a \pmod{n} + b \pmod{n} $
 
-We can see this better with an example! Let's say we want to calculate $ (8 + 9) \pmod{5} $.
+We can see this better with an example! Let's say we want to calculate $ (8 + 9) \pmod{5}$.
 
 This is a short and easy computation that we can directly compute:
 
@@ -67,7 +67,7 @@ $(a - b) \pmod{n} = ((a \pmod{n} - b \pmod{n})) \pmod{n} $
 
 Example: 
 
-$ (67 - 14) \pmod{6} = (67 \pmod{6} - 14 \pmod{6}) \pmod{6} $
+$ (67 - 14) \pmod{6} = (67 \pmod{6} - 14 \pmod{6}) \pmod{6} = $
 
 $ = 1 - 2 \equiv -1 \equiv 5 \pmod{6} $
 
