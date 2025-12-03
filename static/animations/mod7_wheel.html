@@ -49,8 +49,6 @@
             drawWheel();
         });
         
-        const centerX = canvas.width / 2;
-        const centerY = canvas.height / 2;
         const sectors = 7;
         
         // Define colors for each equivalence class
@@ -99,3 +97,83 @@
             }
             return null;
         }
+        
+        // Function to draw a single sector
+        function drawSector(layerIndex, sectorIndex, number, opacity = 1) {
+            const layers = getLayers();
+            const layer = layers[layerIndex];
+            const cx = canvas.width / 2;
+            const cy = canvas.height / 2;
+            const startAngle = (sectorIndex * 2 * Math.PI / sectors) - Math.PI / 2;
+            const endAngle = ((sectorIndex + 1) * 2 * Math.PI / sectors) - Math.PI / 2;
+            
+            // Draw sector
+            ctx.beginPath();
+            ctx.arc(cx, cy, layer.outer, startAngle, endAngle);
+            ctx.arc(cx, cy, layer.inner, endAngle, startAngle, true);
+            ctx.closePath();
+            
+            // Fill with color
+            ctx.globalAlpha = opacity;
+            ctx.fillStyle = colors[sectorIndex];
+            ctx.fill();
+            ctx.globalAlpha = 1;
+            
+            // Draw border
+            ctx.strokeStyle = '#2C3E50';
+            ctx.lineWidth = 2 * scale;
+            ctx.stroke();
+            
+            // Add number label
+            const midAngle = (startAngle + endAngle) / 2;
+            const labelRadius = (layer.inner + layer.outer) / 2;
+            const labelX = cx + labelRadius * Math.cos(midAngle);
+            const labelY = cy + labelRadius * Math.sin(midAngle);
+            
+            ctx.globalAlpha = opacity;
+            ctx.fillStyle = '#2C3E50';
+            ctx.font = `bold ${24 * scale}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(number, labelX, labelY);
+            ctx.globalAlpha = 1;
+        }
+        
+        // Function to draw the entire wheel up to current number
+        function drawWheel() {
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            const layers = getLayers();
+            
+            // Draw all numbers up to currentNumber
+            for (let num = 0; num <= currentNumber; num++) {
+                const pos = getNumberPosition(num, layers);
+                if (pos) {
+                    drawSector(pos.layerIndex, pos.sectorIndex, num);
+                }
+            }
+            
+            // Draw center circle for aesthetic
+            const cx = canvas.width / 2;
+            const cy = canvas.height / 2;
+            ctx.beginPath();
+            ctx.arc(cx, cy, 10 * scale, 0, 2 * Math.PI);
+            ctx.fillStyle = '#2C3E50';
+            ctx.fill();
+        }
+        
+        // Animation loop
+        function animate() {
+            if (currentNumber <= maxNumber) {
+                drawWheel();
+                currentNumber++;
+                setTimeout(animate, animationSpeed);
+            }
+        }
+        
+        // Start animation
+        animate();
+    </script>
+</body>
+</html>
