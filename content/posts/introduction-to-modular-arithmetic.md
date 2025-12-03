@@ -67,7 +67,7 @@ Example:
 
 $ (67 - 14) \pmod{6} = (67 \pmod{6} - 14 \pmod{6}) \pmod{6} = 1 - 2 \equiv -1 \equiv 5 \pmod{6} $
 
-It's common to express the result of a modulo $n$ operation with the smallest positive integer, which in all cases will be an integer between $0$ and $ n - 1$ (we will see why very shortly!).
+It's common to express the result of a modulo $n$ operation with the smallest non-negative integer, which in all cases will be an integer between $0$ and $ n - 1$ (we will see why very shortly!).
 
 ### Multiplication
 
@@ -140,7 +140,7 @@ $ x = 7 \times q + 2 $
 
 Notice that $x$ can be either positive or negative! 
 
-We call the smallest non-negative integer less than the modulo a residue. When working modulo $7$ for example, we have $7$ different residues: $0, 1, 2, 3, 4, 5$ and $6$. That's because when we divide any integer by $7$ we get $ m = 7 \times q + r$ where $m$ is a random integer and $q \in \mathbb{Z}$ and $r \in \mathbb{N}$. Remember in the *Operations* section when I said it's common to represent the result as the smallest positive integer? That's because the residue is the smallest positive number that will satisfy any congruence (given that there is a solution!). Mathematically speaking it is valid to use ANY integer as long as it satisfies the congruence, but we will see in the future how using the residue simplifies things a lot (and we like that)! Why do residues range from $0$ to $n -1$? By the division algorithm, any integer $m$ can be written as $ m = nq + r \text{ where } 0 \leq r < n$. The remainder $r$ must be non-negative and strictly less than $n$, giving us exactly $n$ possible residues.
+We call the smallest non-negative integer less than the modulo a residue. When working modulo $7$ for example, we have $7$ different residues: $0, 1, 2, 3, 4, 5$ and $6$. That's because when we divide any integer by $7$ we get $ m = 7 \times q + r$ where $m$ is a random integer and $q \in \mathbb{Z}$ and $r \in \mathbb{N}$. Remember in the *Operations* section when I said it's common to represent the result as the smallest non-negative integer? That's because the residue is the smallest non-negative number that will satisfy any congruence (given that there is a solution!). Mathematically speaking it is valid to use ANY integer as long as it satisfies the congruence, but we will see in the future how using the residue simplifies things a lot (and we like that)! Why do residues range from $0$ to $n -1$? By the division algorithm, any integer $m$ can be written as $ m = nq + r \text{ where } 0 \leq r < n$. The remainder $r$ must be non-negative and strictly less than $n$, giving us exactly $n$ possible residues.
 
 With the definition of residue, we have also implicitly defined equivalence classes! 
 
@@ -153,6 +153,8 @@ Before we formally define what an equivalence class is, let me show you a visual
 </div>
 
 As we can see all integers that satisfy $ x \equiv 0 \pmod{7} $ are in the red sector, all that satisfy $x \equiv 1 \pmod{7} $ are in the teal sector, and so on. Notice how the wheel repeates every 7 numbers - this is the cyclic nature of modular arithmetic. All numbers in the the sectors can be interchanged with one another, that's the beauty in modular arithmetic! Take a look at the wheel. Can you quickly answer what is $x \equiv 29 \times 33 \pmod{7}$? The answer is $5$ and you don't need to know how much $29 \times 33$ is! We know $29 \equiv 1 \pmod{7}$ and $33 \equiv 5 \pmod{7}$, we can then easily replace $29$ by $1$ and $33$ by $5$. Therefore $x \equiv 1 \times 5 \equiv 5 \pmod{7}$.
+
+An equivalence class is the set that contains all integers that are congruent to one another for a given modulo. The number of equivalence classes is exactly the same as the modulo. In the modulo 7 example we just explored above, we have 7 different sectors in the wheel, and each sector represents one equivalence class. For instance, the integers $0, 7, 14, 21, 28, \ldots$ are all in the same equivalence class (they're all congruent to $0 \pmod{7}$), the integers $1, 8, 15, 22, 29, \ldots$ are in another class, and so on. It's important to remember that even though only non-negative numbers are represented in the image above, negative numbers are also placed in sectors. For example, $-7, -14, -21$ all belong to the same equivalence class as $0$. When working with negative numbers on the wheel, we simply work counter-clockwise.
 
 There are several useful properties we can take from equivalence classes, but they will not be covered here.
 
