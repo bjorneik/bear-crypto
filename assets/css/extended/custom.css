@@ -55,18 +55,31 @@
     text-align: left;
 }
 
-/* Handle long math expressions - allow horizontal scroll */
+/* Fix inline math to stay inline */
 .post-content .MathJax {
-    overflow-x: auto;
-    overflow-y: hidden;
-    max-width: 100%;
-    display: block;
+    display: inline !important;
+    overflow-x: visible;
+    overflow-y: visible;
 }
 
-/* Prevent math from breaking layout on mobile */
+/* Display math (block equations) should scroll if needed */
 .post-content .MathJax_Display {
+    display: block !important;
     overflow-x: auto;
     overflow-y: hidden;
+    margin: 1em 0;
+}
+
+/* Ensure math doesn't break words */
+.post-content mjx-container {
+    display: inline-block !important;
+    overflow-x: visible;
+}
+
+.post-content mjx-container[display="true"] {
+    display: block !important;
+    overflow-x: auto;
+    margin: 1em 0;
 }
 
 /* Simple iframe styling - responsive */
@@ -110,9 +123,8 @@ article img {
     height: auto;
 }
 
-/* Specifically for homepage banner - make it fill the content width */
-.post-content img,
-.post img[src*="banner"] {
+/* Specifically for homepage banner */
+.post-content img {
     width: 100%;
     max-width: 100%;
     height: auto;
