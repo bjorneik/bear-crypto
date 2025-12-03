@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Modular Arithmetic Wheel - Mod 7</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            font-family: 'Arial', sans-serif;
+        }
+        
+        #canvas {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="800" height="800"></canvas>
+    
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        const centerX = 400;
+        const centerY = 400;
+        const sectors = 7;
+        
+        // Define colors for each equivalence class
+        const colors = [
+            '#FF6B6B', // 0 mod 7 - Red
+            '#4ECDC4', // 1 mod 7 - Teal
+            '#45B7D1', // 2 mod 7 - Blue
+            '#FFA07A', // 3 mod 7 - Light Salmon
+            '#98D8C8', // 4 mod 7 - Mint
+            '#F7DC6F', // 5 mod 7 - Yellow
+            '#BB8FCE'  // 6 mod 7 - Purple
+        ];
+        
+        // Layer radii (from innermost to outermost)
+        const layers = [
+            { inner: 0, outer: 60, startNum: 0 },      // Core: 0-6
+            { inner: 60, outer: 120, startNum: 7 },    // Layer 1: 7-13
+            { inner: 120, outer: 180, startNum: 14 },  // Layer 2: 14-20
+            { inner: 180, outer: 240, startNum: 21 },  // Layer 3: 21-27
+            { inner: 240, outer: 300, startNum: 28 },  // Layer 4: 28-34
+            { inner: 300, outer: 360, startNum: 35 }   // Layer 5: 35-41
+        ];
+        
+        // Animation state
+        let currentNumber = 0;
+        const maxNumber = 41;
+        const animationSpeed = 300; // milliseconds per number
+        
+        // Function to get layer and sector for a given number
+        function getNumberPosition(num) {
+            for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
+                const layer = layers[layerIndex];
+                if (num >= layer.startNum && num < layer.startNum + sectors) {
+                    const sectorIndex = num - layer.startNum;
+                    return { layerIndex, sectorIndex, layer };
+                }
+            }
+            return null;
+        }
+        
+        // Function to draw a single sector
+        function drawSector(layerIndex, sectorIndex, number, opacity = 1) {
+            const layer = layers[layerIndex];
+            const startAngle = (sectorIndex * 2 * Math.PI / sectors) - Math.PI / 2;
+            const endAngle = ((sectorIndex + 1) * 2 * Math.PI / sectors) - Math.PI / 2;
+            
+            // Draw sector
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, layer.outer, startAngle, endAngle);
+            ctx.arc(centerX, centerY, layer.inner, endAngle, startAngle, true);
+            ctx.closePath();
+            
+            // Fill with color
+            ctx.globalAlpha = opacity;
+            ctx.fillStyle = colors[sectorIndex];
+            ctx.fill();
+            ctx.globalAlpha = 1;
+            
+            // Draw border
+            ctx.strokeStyle = '#2C3E50';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+            
+            // Add number label
+            const midAngle = (startAngle + endAngle) / 2;
+            const labelRadius = (layer.inner + layer.outer) / 2;
+            const labelX = centerX + labelRadius * Math.cos(midAngle);
+            const labelY = centerY + labelRadius * Math.sin(midAngle);
+            
+            ctx.globalAlpha = opacity;
+            ctx.fillStyle = '#2C3E50';
+            ctx.font = 'bold 24px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(number, labelX, labelY);
+            ctx.globalAlpha = 1;
+        }
+        
+        // Function to draw the entire wheel up to current number
+        function drawWheel() {
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw all numbers up to currentNumber
+            for (let num = 0; num <= currentNumber; num++) {
+                const pos = getNumberPosition(num);
+                if (pos) {
+                    drawSector(pos.layerIndex, pos.sectorIndex, num);
+                }
+            }
+            
+            // Draw center circle for aesthetic
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 10, 0, 2 * Math.PI);
+            ctx.fillStyle = '#2C3E50';
+            ctx.fill();
+        }
+        
+        // Animation loop
+        function animate() {
+            if (currentNumber <= maxNumber) {
+                drawWheel();
+                currentNumber++;
+                setTimeout(animate, animationSpeed);
+            }
+        }
+        
+        // Start animation
+        animate();
+    </script>
+</body>
+</html>
