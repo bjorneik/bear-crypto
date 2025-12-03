@@ -47,9 +47,7 @@ This is a short and easy computation that we can directly compute:
  
   But let's apply the property we just saw above: 
   
-  $ (8 + 9) \pmod{5} = (8 \pmod{5} + 9\pmod{5}) \pmod{5} = $
-  
- $ = 3 + 4 \equiv 7 \equiv 2 \pmod{5} $
+  $ (8 + 9) \pmod{5} = (8 \pmod{5} + 9\pmod{5}) \pmod{5} = 3 + 4 \equiv 7 \equiv 2 \pmod{5} $
 
 Now notice what happens if we don't write the final modulos:
 
@@ -67,9 +65,7 @@ $(a - b) \pmod{n} = ((a \pmod{n} - b \pmod{n})) \pmod{n} $
 
 Example: 
 
-$ (67 - 14) \pmod{6} = (67 \pmod{6} - 14 \pmod{6}) \pmod{6} = $
-
-$ = 1 - 2 \equiv -1 \equiv 5 \pmod{6} $
+$ (67 - 14) \pmod{6} = (67 \pmod{6} - 14 \pmod{6}) \pmod{6} = 1 - 2 \equiv -1 \equiv 5 \pmod{6} $
 
 It's common to express the result of a modulo $n$ operation with the smallest positive integer, which in all cases will be an integer between $0$ and $ n - 1$ (we will see why very shortly!).
 
@@ -85,11 +81,9 @@ Example:
 
 $ (86544 \times 73261) \pmod{9} $
 
-The property can be even more useful in some cases. In the example above we know that $86544$ is divisible by $9$ (this can be easily checked by adding all the digits: $ 8 + 6 + 5 + 4 + 4 = 27 $ which is divisible by $9$.). This means that $ 86544 \equiv 0 \pmod{9} $. We don't even need to know $ 73261 \pmod{9} $ to know the result of $ (86544 \times 73261) \pmod{9} $.
+The property can be even more useful in some cases. In the example above we know that $86544$ is divisible by $9$ (this can be easily checked by adding all the digits: $ 8 + 6 + 5 + 4 + 4 = 27 $ which is divisible by $9$). This means that $ 86544 \equiv 0 \pmod{9} $. We don't even need to know $ 73261 \pmod{9} $ to know the result of $ (86544 \times 73261) \pmod{9} $.
 
-$ (86544 \times 73261) \pmod{9} = (86544 \pmod{9}) \times (73261 \pmod{9}) \pmod{9} \equiv $
-
-$ \equiv 0 \times (73261 \pmod{9}) \equiv 0 \pmod{9} $
+$ (86544 \times 73261) \pmod{9} = (86544 \pmod{9}) \times (73261 \pmod{9}) \pmod{9} \equiv 0 \times (73261 \pmod{9}) \equiv 0 \pmod{9} $
 
 ### Other Operations
 
