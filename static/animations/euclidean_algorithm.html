@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Euclidean Algorithm Animation - GCD(270, 192)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            background: transparent;
+            font-family: 'Georgia', serif;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+        
+        #canvas {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        .controls {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #4ECDC4;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        button:hover {
+            background: #45B7D1;
+        }
+        
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div class="controls">
+        <button id="startBtn">Start Animation</button>
+        <button id="resetBtn">Reset</button>
+    </div>
+    
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const startBtn = document.getElementById('startBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        
+        // Algorithm steps for GCD(270, 192)
+        const steps = [
+            { a: 270, b: 192, equation: "270 = 192 × 1 + 78", quotient: 1, remainder: 78 },
+            { a: 192, b: 78, equation: "192 = 78 × 2 + 36", quotient: 2, remainder: 36 },
+            { a: 78, b: 36, equation: "78 = 36 × 2 + 6", quotient: 2, remainder: 6 },
+            { a: 36, b: 6, equation: "36 = 6 × 6 + 0", quotient: 6, remainder: 0 }
+        ];
+        
+        let currentStep = -1;
+        let animating = false;
+        
+        // Set canvas size based on content
+        function resizeCanvas() {
+            const maxWidth = Math.min(window.innerWidth - 40, 800);
+            canvas.width = maxWidth;
+            
+            // Height depends on number of steps
+            const headerHeight = 120;
+            const stepHeight = 70;
+            const conclusionHeight = 140;
+            const padding = 60;
+            
+            canvas.height = headerHeight + (steps.length * stepHeight) + conclusionHeight + padding;
+        }
+        
+        resizeCanvas();
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            drawAllSteps(currentStep, 1);
+        });
+        
+        function drawAllSteps(upToStep, progress = 1) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            const padding = 40;
+            
+            // Title
+            ctx.fillStyle = '#2C3E50';
+            ctx.font = 'bold 26px Georgia';
+            ctx.textAlign = 'center';
+            ctx.fillText('Euclidean Algorithm', canvas.width / 2, padding + 10);
+            
+            ctx.font = '18px Georgia';
+            ctx.fillStyle = '#666';
+            ctx.fillText('Finding GCD(270, 192)', canvas.width / 2, padding + 38);
+            
+            if (upToStep === -1) {
+                // Initial state
+                ctx.font = '20px Georgia';
+                ctx.fillStyle = '#4ECDC4';
+                ctx.fillText('Click "Start Animation" to begin', canvas.width / 2, padding + 100);
+                return;
+            }
+            
+            // Draw separator line
+            ctx.strokeStyle = '#E0E0E0';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(padding, padding + 55);
+            ctx.lineTo(canvas.width - padding, padding + 55);
+            ctx.stroke();
+            
+            // Draw all steps up to current
+            let yPos = padding + 90;
+            const stepHeight = 70;
+            
+            for (let i = 0; i <= Math.min(upToStep, steps.length - 1); i++) {
+                const s = steps[i];
+                const alpha = (i === upToStep) ? progress : 1;
+                
+                ctx.globalAlpha = alpha;
+                
+                // Step number
+                ctx.font = 'bold 18px Georgia';
+                ctx.fillStyle = '#4ECDC4';
+                ctx.textAlign = 'left';
+                ctx.fillText(`Step ${i + 1}:`, padding, yPos);
+                
+                // Equation
+                ctx.font = '20px Georgia';
+                ctx.fillStyle = '#2C3E50';
+                
+                // Parse equation to highlight remainder
+                const parts = s.equation.split('+');
+                const beforeRemainder = parts[0] + '+';
+                const remainderPart = parts[1].trim();
+                
+                const xStart = padding + 75;
+                ctx.fillText(beforeRemainder, xStart, yPos);
+                
+                // Highlight remainder
+                if (s.remainder !== 0) {
+                    const beforeWidth = ctx.measureText(beforeRemainder).width;
+                    ctx.fillStyle = '#FF6B6B';
+                    ctx.font = 'bold 20px Georgia';
+                    ctx.fillText(remainderPart, xStart + beforeWidth + 2, yPos);
+                } else {
+                    const beforeWidth = ctx.measureText(beforeRemainder).width;
+                    ctx.fillStyle = '#98D8C8';
+                    ctx.font = 'bold 20px Georgia';
+                    ctx.fillText(remainderPart, xStart + beforeWidth + 2, yPos);
+                }
+                
+                // Small annotation showing what happens to the remainder
+                if (i < steps.length - 1 && s.remainder !== 0) {
+                    ctx.font = '14px Georgia';
+                    ctx.fillStyle = '#999';
+                    ctx.fillText(`→ ${s.remainder} becomes next divisor`, xStart + 320, yPos);
+                }
+                
+                ctx.globalAlpha = 1;
+                yPos += stepHeight;
+            }
+            
+            // Final result
+            if (upToStep >= steps.length) {
+                ctx.globalAlpha = progress;
+                
+                yPos += 10;
+                
+                // Draw box around result
+                const boxPadding = 20;
+                const boxY = yPos - 20;
+                const boxHeight = 90;
+                
+                ctx.fillStyle = '#FFF5F5';
+                ctx.fillRect(padding, boxY, canvas.width - 2 * padding, boxHeight);
+                
+                ctx.strokeStyle = '#FF6B6B';
+                ctx.lineWidth = 3;
+                ctx.strokeRect(padding, boxY, canvas.width - 2 * padding, boxHeight);
+                
+                ctx.font = 'bold 28px Georgia';
+                ctx.fillStyle = '#FF6B6B';
+                ctx.textAlign = 'center';
+                ctx.fillText('GCD(270, 192) = 6', canvas.width / 2, boxY + 40);
+                
+                ctx.font = '16px Georgia';
+                ctx.fillStyle = '#666';
+                ctx.fillText('The last non-zero remainder is the GCD', canvas.width / 2, boxY + 68);
+                
+                ctx.globalAlpha = 1;
+            }
+        }
+        
+        function animate() {
+            if (currentStep > steps.length) {
+                animating = false;
+                startBtn.textContent = 'Start Animation';
+                startBtn.disabled = false;
+                return;
+            }
+            
+            let progress = 0;
+            const duration = 600;
+            const startTime = Date.now();
+            
+            function frame() {
+                const elapsed = Date.now() - startTime;
+                progress = Math.min(elapsed / duration, 1);
+                
+                drawAllSteps(currentStep, progress);
+                
+                if (progress < 1) {
+                    requestAnimationFrame(frame);
+                } else {
+                    setTimeout(() => {
+                        currentStep++;
+                        if (currentStep <= steps.length) {
+                            animate();
+                        }
+                    }, 1200);
+                }
+            }
+            
+            frame();
+        }
+        
+        function start() {
+            if (animating) return;
+            
+            if (currentStep > steps.length) {
+                reset();
+            }
+            
+            animating = true;
+            startBtn.disabled = true;
+            startBtn.textContent = 'Animating...';
+            
+            if (currentStep === -1) {
+                currentStep = 0;
+            }
+            
+            animate();
+        }
+        
+        function reset() {
+            currentStep = -1;
+            animating = false;
+            startBtn.textContent = 'Start Animation';
+            startBtn.disabled = false;
+            drawAllSteps(-1);
+        }
+        
+        startBtn.addEventListener('click', start);
+        resetBtn.addEventListener('click', reset);
+        
+        // Initial draw
+        drawAllSteps(-1);
+    </script>
+</body>
+</html>
