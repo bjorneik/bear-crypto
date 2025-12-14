@@ -39,25 +39,25 @@ theme = 'PaperMod'
 
 [[menu.main]]
   name = "Mathematics Foundations"
-  url = "/categories/mathematics-foundations/"
+  url = "/categories/mathematics-foundations"
   weight = 2
 
 [[menu.main]]
-  name = "Classical Cryptography"
-  url = "/categories/classical-cryptography/"
+  name = "Classical Ciphers"
+  url = "/categories/classical-ciphers"
   weight = 3
 
 [[menu.main]]
   name = "Symmetric Key"
-  url = "/categories/symmetric-key-systems/"
+  url = "/categories/symmetric-key-systems"
   weight = 4
 
 [[menu.main]]
   name = "Public Key"
-  url = "/categories/public-key-cryptography/"
+  url = "/categories/public-key-cryptography"
   weight = 5
 
 [[menu.main]]
   name = "About"
-  url = "/about/"
+  url = "/about"
   weight = 6
