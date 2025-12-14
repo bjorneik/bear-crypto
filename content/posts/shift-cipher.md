@@ -1,6 +1,6 @@
 ---
 title: "The Shift Cipher"
-date: 2024-12-12
+date: 2024-12-14
 categories: ["Classical Ciphers"]
 tags: ["shift cipher", "caesar cipher", "substitution cipher", "classical cryptography", "encryption"]
 math: true
