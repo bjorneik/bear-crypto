@@ -42,21 +42,21 @@ So *affine* is encrypted to *HWWFUT* using the affine cipher with key $(3,7)$.
 
 Let's now work on the decryption for the affine cipher. We can work backwards to find out how exactly to decrypt. Let's say the encrypted letter is $y$, the encryption is done as follows:
 
-$ y = x \times \alpha + \beta \pmod{26} $
+$ y \equiv x \times \alpha + \beta \pmod{26} $
 
 We need now to find out $x$, because we are decrypting. In other words, we need to isolate x. The first step is to subtract $\beta$ from both sides.
 
-$ y - \beta = x \times \alpha + \beta - \beta \pmod{26} $
+$ y - \beta \equiv x \times \alpha + \beta - \beta \pmod{26} $
 
-$ y - \beta = x \times \alpha \pmod{26} $
+$ y - \beta \equiv x \times \alpha \pmod{26} $
 
 Now in order to isolate $x$ we need to get rid of $\alpha$. How can we do that? Multiplicative inverse! Remember, what we do on one side, we have to do on the other as well! We are assuming here that there exists the multiplicative inverse of $\alpha$ modulo 26.
 
-$ (y - \beta) \times \alpha^{-1} = x \times \alpha \times \alpha^{-1} \pmod{26} $ 
+$ (y - \beta) \times \alpha^{-1} \equiv x \times \alpha \times \alpha^{-1} \pmod{26} $ 
 
 Now we know that $\alpha \times \alpha^{-1} \equiv 1 \pmod{26} $
 
-$ (y - \beta) \times \alpha^{-1} = x \pmod{26} $
+$ (y - \beta) \times \alpha^{-1} \equiv x \pmod{26} $
 
 We have now found out how to decrypt an affine cipher! In the shift cipher the decryption key was essentially the same as the encryption key (just negate it). Here in the affine cipher, we need to compute the modular inverse — the decryption process is more involved. In order to decrypt we need $\beta$ and $\alpha^{-1}$, so the decryption key is $(\alpha^{-1},\beta)$.
 
